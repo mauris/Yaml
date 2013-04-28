@@ -112,7 +112,6 @@ EOF;
 --- %YAML:1.2
 foo
 ...
-# test
 EOF;
 
         $this->assertEquals('foo', $this->parser->parse($yaml));
