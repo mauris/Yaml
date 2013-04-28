@@ -94,12 +94,25 @@ class ParserTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    public function testStartOfTheDocumentMarker()
+    {
+        $yaml = <<<EOF
+#comments
+--- %YAML:1.2
+foo
+...
+EOF;
+
+        $this->assertEquals('foo', $this->parser->parse($yaml));
+    }
+
     public function testEndOfTheDocumentMarker()
     {
         $yaml = <<<EOF
---- %YAML:1.0
+--- %YAML:1.2
 foo
 ...
+# test
 EOF;
 
         $this->assertEquals('foo', $this->parser->parse($yaml));
