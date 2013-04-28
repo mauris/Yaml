@@ -1,8 +1,8 @@
 {
-    "name": "symfony/yaml",
+    "name": "mauris/yaml",
     "type": "library",
-    "description": "Symfony Yaml Component",
-    "keywords": [],
+    "description": "Mauris Build of the Symfony Yaml Component",
+    "keywords": ["yaml", "parser"],
     "homepage": "http://symfony.com",
     "license": "MIT",
     "authors": [
@@ -13,6 +13,10 @@
         {
             "name": "Symfony Community",
             "homepage": "http://symfony.com/contributors"
+        },
+        {
+            "name": "Sam-Mauris Yong",
+            "email": "sam@mauris.sg"
         }
     ],
     "require": {
@@ -21,11 +25,4 @@
     "autoload": {
         "psr-0": { "Symfony\\Component\\Yaml\\": "" }
     },
-    "target-dir": "Symfony/Component/Yaml",
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.2-dev"
-        }
-    }
 }
