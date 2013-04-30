@@ -74,7 +74,7 @@ foobar:
                      - foo
 
 EOF;
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 4, 0));
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 4, 0));
     }
 
     public function testSpecifications()
@@ -119,7 +119,7 @@ bar: [1, foo]
 foobar: { foo: bar, bar: [1, foo], foobar: { foo: bar, bar: [1, foo] } }
 
 EOF;
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 1), '->dump() takes an inline level argument');
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 1), '->dump() takes an inline level argument');
 
         $expected = <<<EOF
 '': bar
@@ -134,7 +134,7 @@ foobar:
     foobar: { foo: bar, bar: [1, foo] }
 
 EOF;
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 2), '->dump() takes an inline level argument');
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 2), '->dump() takes an inline level argument');
 
         $expected = <<<EOF
 '': bar
@@ -153,7 +153,7 @@ foobar:
         bar: [1, foo]
 
 EOF;
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 3), '->dump() takes an inline level argument');
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 3), '->dump() takes an inline level argument');
 
         $expected = <<<EOF
 '': bar
@@ -174,8 +174,8 @@ foobar:
             - foo
 
 EOF;
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 4), '->dump() takes an inline level argument');
-        $this->assertEquals($expected, $this->dumper->dump($this->array, 10), '->dump() takes an inline level argument');
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 4), '->dump() takes an inline level argument');
+        $this->assertEquals(str_replace(array("\r\n", "\r"), "\n", $expected), $this->dumper->dump($this->array, 10), '->dump() takes an inline level argument');
     }
 
     public function testObjectSupportEnabled()
