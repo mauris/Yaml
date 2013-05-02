@@ -1,7 +1,6 @@
-Yaml Component
-==============
+#Yaml Component
 
-YAML implements most of the YAML 1.2 specification.
+Yaml implements most of the YAML 1.2 specification.
 
     use Symfony\Component\Yaml\Yaml;
 
@@ -9,8 +8,21 @@ YAML implements most of the YAML 1.2 specification.
 
     print Yaml::dump($array);
 
-Resources
----------
+##Installation
+
+You can install Yaml through [Composer](http://getcomposer.org):
+
+    {
+        "require": {
+            "mauris/yaml": "1.0.*"
+        }
+    }
+
+Then run:
+
+    $ composer install
+
+##Resources
 
 You can run the unit tests with the following command:
 
